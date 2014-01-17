@@ -79,10 +79,10 @@ public class MainActivity extends ActionBarActivity {
         String tipPercentageString = tipAmountButton.getTag().toString();
         int tipPercentage = Integer.parseInt(tipPercentageString);
 
-        float tip = initialAmount * tipPercentage/100;
+        double tip = initialAmount * tipPercentage/100;
 
         TextView tvTipAmount = (TextView) findViewById(R.id.tvTipAmount);
-        tvTipAmount.setText("Tip is: $" + String.format("%.02f", tip));
+        tvTipAmount.setText("Tip is: " + NumberFormat.getCurrencyInstance().format(tip));
 
         // dismiss keyboard
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
