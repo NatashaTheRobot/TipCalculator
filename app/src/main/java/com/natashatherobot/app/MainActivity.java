@@ -10,8 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
+    EditText etTipAmount;
+    TextView tvTipAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,9 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+        etTipAmount = (EditText) findViewById(R.id.etTipAmount);
+        tvTipAmount = (TextView) findViewById(R.id.tvTipAmount);
     }
 
 

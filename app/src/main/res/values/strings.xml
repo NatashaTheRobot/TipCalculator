@@ -4,5 +4,8 @@
     <string name="app_name">TipCalculator</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="tip20">20%</string>
+    <string name="tip10">10%</string>
+    <string name="tip15">15%</string>
 
 </resources>

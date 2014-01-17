@@ -15,9 +15,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etTipAmount"
+        android:hint="0.00"
         android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:inputType="numberDecimal"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tip15"
+        android:id="@+id/btn15Tip"
+        android:layout_below="@+id/etTipAmount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tip10"
+        android:id="@+id/btn10Tip"
+        android:layout_alignBaseline="@+id/btn15Tip"
+        android:layout_toLeftOf="@+id/btn15Tip"
+        android:layout_marginRight="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tip20"
+        android:id="@+id/btn20Tip"
+        android:layout_alignBaseline="@+id/btn15Tip"
+        android:layout_toRightOf="@+id/btn15Tip"
+        android:layout_marginLeft="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tip is: $0"
+        android:id="@+id/tvTipAmount"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
+
 </RelativeLayout>
