@@ -7,5 +7,6 @@
     <string name="tip20">20%</string>
     <string name="tip10">10%</string>
     <string name="tip15">15%</string>
+    <string name="etTipHintValue">0.00</string>
 
 </resources>

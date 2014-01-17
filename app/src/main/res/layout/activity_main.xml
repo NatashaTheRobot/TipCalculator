@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etTipAmount"
-        android:hint="0.00"
+        android:hint="@string/etTipHintValue"
         android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -27,27 +27,33 @@
         android:layout_height="wrap_content"
         android:text="@string/tip15"
         android:id="@+id/btn15Tip"
+        android:tag="15"
         android:layout_below="@+id/etTipAmount"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="70dp"
+        android:onClick="calculateTipAmount"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tip10"
         android:id="@+id/btn10Tip"
+        android:tag="10"
         android:layout_alignBaseline="@+id/btn15Tip"
         android:layout_toLeftOf="@+id/btn15Tip"
-        android:layout_marginRight="25dp" />
+        android:layout_marginRight="25dp"
+        android:onClick="calculateTipAmount"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tip20"
         android:id="@+id/btn20Tip"
+        android:tag="20"
         android:layout_alignBaseline="@+id/btn15Tip"
         android:layout_toRightOf="@+id/btn15Tip"
-        android:layout_marginLeft="25dp" />
+        android:layout_marginLeft="25dp"
+        android:onClick="calculateTipAmount"/>
 
     <TextView
         android:layout_width="wrap_content"

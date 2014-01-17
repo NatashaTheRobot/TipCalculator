@@ -1,5 +1,6 @@
 package com.natashatherobot.app;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -67,6 +70,22 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
+    }
+
+    // on tip amount button click
+    public void calculateTipAmount(View view) {
+        String initialAmountString = etTipAmount.getText().toString();
+        float initialAmount = Float.parseFloat(initialAmountString);
+
+        Button tipAmountButton = (Button)view;
+        String tipPercentageString = tipAmountButton.getTag().toString();
+        int tipPercentage = Integer.parseInt(tipPercentageString);
+
+        float tip = initialAmount * tipPercentage/100;
+
+        tvTipAmount.setText("Tip is: $" + Float.toString(tip));
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(etTipAmount.getWindowToken(), 0);
     }
 
 }
