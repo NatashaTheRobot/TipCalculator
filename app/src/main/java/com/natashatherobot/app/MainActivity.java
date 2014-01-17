@@ -16,9 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class MainActivity extends ActionBarActivity {
-    EditText etTipAmount;
-    TextView tvTipAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,6 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
-
-        etTipAmount = (EditText) findViewById(R.id.etTipAmount);
-        tvTipAmount = (TextView) findViewById(R.id.tvTipAmount);
     }
 
 
@@ -74,7 +71,8 @@ public class MainActivity extends ActionBarActivity {
 
     // on tip amount button click
     public void calculateTipAmount(View view) {
-        String initialAmountString = etTipAmount.getText().toString();
+        EditText etInitialAmount = (EditText) findViewById(R.id.etInitialAmount);
+        String initialAmountString = etInitialAmount.getText().toString();
         float initialAmount = Float.parseFloat(initialAmountString);
 
         Button tipAmountButton = (Button)view;
@@ -83,9 +81,12 @@ public class MainActivity extends ActionBarActivity {
 
         float tip = initialAmount * tipPercentage/100;
 
-        tvTipAmount.setText("Tip is: $" + Float.toString(tip));
+        TextView tvTipAmount = (TextView) findViewById(R.id.tvTipAmount);
+        tvTipAmount.setText("Tip is: $" + String.format("%.02f", tip));
+
+        // dismiss keyboard
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(etTipAmount.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(etInitialAmount.getWindowToken(), 0);
     }
 
 }
